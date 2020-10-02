@@ -7,22 +7,24 @@ package matrix;
  * 	and then it prints out his neighbors.
  * **************************************************************************/
 
-import java.util.Scanner;
+import java.util.*;
+import java.io.*;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
 		System.out.print("input the values for N & M: ");
-		int N = in.nextInt();
-		int M = in.nextInt();
+		String[] s = br.readLine().trim().split(" "); 
+		int N = Integer.parseInt(s[0]);
+		int M = Integer.parseInt(s[1]);
 
 		int[][] mtx = new int[N][M];
 
 		for (int i = 0; i < N; i++) {
 			for (int j = 0; j < M; j++) {
-				mtx[i][j] = in.nextInt();
+				mtx[i][j] = Integer.parseInt(br.readLine().trim());
 			}
 		}
 
@@ -36,7 +38,7 @@ public class Main {
 		System.out.println("\n------------MATRIX------------");
 
 		System.out.print("Input a number: ");
-		int n = in.nextInt();
+		int n = Integer.parseInt(br.readLine().trim());
 
 		for (int i=0; i<mtx.length; i++) {
 			for (int j=0; j<mtx[i].length; j++) {
@@ -58,7 +60,7 @@ public class Main {
 			}
 		}
 
-		in.close();
+		
 
 	}
 
